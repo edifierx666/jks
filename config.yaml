@@ -1,0 +1,8 @@
+jenkins:
+  baseurl: http://172.16.9.11:8080
+  account: zhangyu
+  pwd: 123456
+log:
+  file: false
+Server:
+  port: 8010

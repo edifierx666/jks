@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="021abdbe-a353-4129-84e4-3398fd7cb8aa" />
+      <option name="name" value="021abdbe-a353-4129-84e4-3398fd7cb8aa" />
+      <option name="url" value="https://maven.aliyun.com/repository/central" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="b055d4a7-e50d-45c3-b9f4-1dcb37568fc3" />
+      <option name="name" value="b055d4a7-e50d-45c3-b9f4-1dcb37568fc3" />
+      <option name="url" value="https://maven.aliyun.com/repository/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="d79ddfba-e896-44ea-bcaf-0bba8f220ba0" />
+      <option name="name" value="d79ddfba-e896-44ea-bcaf-0bba8f220ba0" />
+      <option name="url" value="https://maven.aliyun.com/repository/spring-plugin" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="1613ec1c-ea84-4746-9574-0bf1f2d1decf" />
+      <option name="name" value="1613ec1c-ea84-4746-9574-0bf1f2d1decf" />
+      <option name="url" value="https://maven.aliyun.com/repository/spring" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="8f7cb713-773a-4d2e-b849-4496b0997f7b" />
+      <option name="name" value="8f7cb713-773a-4d2e-b849-4496b0997f7b" />
+      <option name="url" value="https://app.camunda.com/nexus/content/groups/public" />
+    </remote-repository>
+  </component>
+</project>
