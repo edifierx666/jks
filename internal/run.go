@@ -16,7 +16,13 @@ func Run() {
   initialize.Init()
   service.Init()
   global.Logger.Info("配置文件:", zap.Any("config", global.Config))
-  app := fiber.New(fiber.Config{Immutable: true, ErrorHandler: middleware.CustomErrorHandle, EnablePrintRoutes: true,
+  app := fiber.New(fiber.Config{
+    Immutable:         true,
+    ErrorHandler:      middleware.CustomErrorHandle,
+    EnablePrintRoutes: true,
+    ColorScheme: fiber.Colors{
+      Yellow: fiber.DefaultColors.Reset,
+    },
   })
   middleware.Middleware(app)
   router.RegisterRoute(app)
