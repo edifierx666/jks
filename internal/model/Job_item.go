@@ -23,6 +23,8 @@ type ItemObj struct {
   StartTime   string                   `json:"startTime"`
   JobName     string                   `json:"jobName"`
   BuildParams []map[string]interface{} `json:"buildParams"`
+  Raw         map[string]interface{}   `json:"raw"`
+  RawJob      map[string]interface{}   `json:"rawJob"`
 }
 
 func GetCauses(build *gojenkins.Build) []map[string]interface{} {

@@ -61,6 +61,8 @@ func Job(c *fiber.Ctx) error {
       item.Url = id.URL
       item.StartTime = build.GetTimestamp().Format("2006-01-02 15:04:05")
       item.JobName = req.Name
+      item.Raw = gconv.Map(build.Raw)
+      item.RawJob = gconv.Map(build.Job.Raw)
       parameters := build.GetParameters()
       for _, parameter := range parameters {
         if parameter.Name == "BRANCH" {
