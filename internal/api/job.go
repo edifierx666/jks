@@ -135,8 +135,13 @@ func JobConsoleOutput(c *fiber.Ctx) error {
     return resp.FailWithMessage(err.Error(), c)
   }
   consoleOutput := jobBuildInfo.GetConsoleOutput(ctx)
-
-  return resp.OkWithData(consoleOutput, c)
+  return resp.OkWithData(map[string]interface{}{
+    "text":      consoleOutput,
+    "result":    jobBuildInfo.GetResult(),
+    "timestamp": jobBuildInfo.GetTimestamp().Format("2006-01-02 15:04:05"),
+    "number":    jobBuildInfo.GetBuildNumber(),
+    "url":       jobBuildInfo.GetUrl(),
+  }, c)
 }
 
 func BuildJob(c *fiber.Ctx) error {

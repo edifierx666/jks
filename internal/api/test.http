@@ -1,0 +1,7 @@
+POST http://127.0.0.1:8010/api/job/build/console
+Content-Type: application/json
+
+{
+  "jobName": "5plus-khtml-ihma-dietary",
+  "buildId": 34
+}
