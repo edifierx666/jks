@@ -10,18 +10,18 @@ import (
   "github.com/gofiber/fiber/v2"
   "github.com/gofiber/fiber/v2/middleware/cors"
   "github.com/gofiber/fiber/v2/middleware/filesystem"
-  recover2 "github.com/gofiber/fiber/v2/middleware/recover"
   "github.com/gofiber/fiber/v2/middleware/requestid"
   "go.uber.org/zap"
   "jks/internal/global"
   "jks/internal/model/resp"
   "jks/internal/service"
+  recover2 "github.com/gofiber/fiber/v2/middleware/recover"
 )
 
 func Middleware(app *fiber.App) {
-  app.Use(cors.New(), requestid.New(), BaseLogger, UserId, recover2.New(recover2.Config{
+  app.Use(recover2.New(recover2.Config{
     EnableStackTrace: true,
-  }))
+  }), cors.New(), requestid.New(), BaseLogger, UserId)
   IndexHome(app)
 }
 
