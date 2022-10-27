@@ -126,6 +126,19 @@ func JobBuildDetail(c *fiber.Ctx) error {
   return resp.OkWithData(gconv.Map(item), c)
 }
 
+func JobConsoleOutput(c *fiber.Ctx) error {
+  ctx := c.Context()
+  req := model.JobConsoleOutputReq{}
+  c.BodyParser(&req)
+  jobBuildInfo, err := service.Service.Jobs.GetBuild(ctx, req.JobName, req.BuildId)
+  if err != nil {
+    return resp.FailWithMessage(err.Error(), c)
+  }
+  consoleOutput := jobBuildInfo.GetConsoleOutput(ctx)
+
+  return resp.OkWithData(consoleOutput, c)
+}
+
 func BuildJob(c *fiber.Ctx) error {
   ctx := c.Context()
   req := model.JobBuildReq{}
@@ -137,6 +150,7 @@ func BuildJob(c *fiber.Ctx) error {
   global.Logger.Info(fmt.Sprintf("%v调用了构建服务:%v参数是%#v构建的queueId:%v用户ID:%v", req.Name, req.Param, build))
   return resp.OkWithData(build, c)
 }
+
 func CancelJob(c *fiber.Ctx) error {
   ctx := c.Context()
   req := model.JobCancelBuildReq{}

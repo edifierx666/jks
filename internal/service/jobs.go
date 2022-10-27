@@ -29,6 +29,10 @@ func (j *Jobs) Build(ctx context.Context, name string, params map[string]string)
   return j.baseClient.BuildJob(ctx, name, params)
 }
 
+func (j *Jobs) GetBuild(ctx context.Context, jobName string, number int64) (*gojenkins.Build, error) {
+  return j.baseClient.GetBuild(ctx, jobName, number)
+}
+
 func (j *Jobs) CancelBuild(ctx context.Context, name string, buildId int, params map[string]string) bool {
   post, err := j.baseClient.Requester.Post(ctx, fmt.Sprintf("/job/%v/%v/stop", name, buildId), nil, nil, params)
   if err != nil {

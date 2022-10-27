@@ -15,6 +15,10 @@ type JobDetailRes struct {
   Params    []*JobParams `json:"params"`
   BuildList []*ItemObj   `json:"buildList"`
 }
+type JobConsoleOutputReq struct {
+  JobName string `json:"jobName"`
+  BuildId int64  `json:"buildId"`
+}
 type JobBuildDetailReq struct {
   JobName string `json:"jobName"`
   BuildId string `json:"buildId"`

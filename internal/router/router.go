@@ -15,6 +15,7 @@ func RegisterRoute(app *fiber.App) {
     group.Route("/job", func(router fiber.Router) {
       router.Post("/", api.Job)
       router.Post("/build/detail", api.JobBuildDetail)
+      router.Post("/build/console", api.JobConsoleOutput)
       router.Post("/build", api.BuildJob)
       router.Post("/cancel", api.CancelJob)
     })
