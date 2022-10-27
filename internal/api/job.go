@@ -132,7 +132,7 @@ func JobConsoleOutput(c *fiber.Ctx) error {
   c.BodyParser(&req)
   jobBuildInfo, err := service.Service.Jobs.GetBuild(ctx, req.JobName, req.BuildId)
   if err != nil {
-    return resp.FailWithMessage(err.Error(), c)
+    return err
   }
   consoleOutput := jobBuildInfo.GetConsoleOutput(ctx)
   return resp.OkWithData(map[string]interface{}{
@@ -150,7 +150,7 @@ func BuildJob(c *fiber.Ctx) error {
   c.BodyParser(&req)
   build, err := service.Service.Jobs.Build(ctx, req.Name, req.Param)
   if err != nil {
-    return resp.FailWithMessage(err.Error(), c)
+    return err
   }
   global.Logger.Info(fmt.Sprintf("%v调用了构建服务:%v参数是%#v构建的queueId:%v用户ID:%v", req.Name, req.Param, build))
   return resp.OkWithData(build, c)
